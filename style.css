@@ -37,6 +37,8 @@ body {
 
 .team-panel {
     flex: 1;
+    /* KEY CHANGE: We need relative positioning to place + and - buttons absolutely */
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,43 +64,62 @@ body {
 
 /* Score Display and Adjustments */
 .score-control {
-    display: flex;
-    align-items: center;
-    gap: 30px; 
+    /* KEY CHANGE: Removed flex layout here so score can dominate the space */
+    display: block; 
+    text-align: center;
 }
 
 .score {
     font-size: 15em; 
     font-weight: 900;
+    /* Ensure the score number itself is centered vertically in the panel */
+    display: block;
+    line-height: 1em; /* Tighten line height to give more space */
 }
 
-/* Plus/Minus Buttons */
+/* Plus/Minus Buttons (Positioned in Corners) */
 .adjust-btn {
-    width: var(--adjust-btn-size);
-    height: var(--adjust-btn-size);
-    font-size: 2em;
+    /* KEY CHANGE: Absolute positioning to place them in the corners of the panel */
+    position: absolute;
+    top: 10px; /* Moves them down from the top edge */
+    
+    width: 40px; /* Adjusted size */
+    height: 40px; /* Adjusted size */
+    font-size: 1.5em; /* Adjusted font size */
+    
     border-radius: 50%;
     border: 3px solid currentColor;
     background: rgba(255, 255, 255, 0.2); 
     cursor: pointer;
     transition: background-color 0.1s ease;
+    z-index: 5; /* Ensure they are above the score */
+}
+
+/* Specific position for the Minus button (Top Left corner of its panel) */
+.minus-btn {
+    left: 10px;
+}
+
+/* Specific position for the Plus button (Top Right corner of its panel) */
+.plus-btn {
+    right: 10px;
 }
 
 .adjust-btn:active {
     background: rgba(255, 255, 255, 0.5); 
 }
 
-/* Reset Button Styling (REDUCED SIZE) */
+/* Reset Button Styling (50% REDUCED SIZE) */
 .reset-btn {
-    /* Reduced from 10px 20px to 6px 12px */
-    padding: 6px 12px; 
-    /* Reduced from 1.5em to 1.1em */
-    font-size: 1.1em; 
+    /* Reduced from 10px 20px to 5px 10px */
+    padding: 5px 10px; 
+    /* Reduced from 1.5em to 0.9em */
+    font-size: 0.9em; 
     font-weight: bold;
     color: var(--text-light);
     background-color: var(--reset-color);
     border: none;
-    border-radius: 5px; /* Slightly reduced border radius */
+    border-radius: 4px; 
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -106,17 +127,17 @@ body {
     background-color: #C62828;
 }
 
-/* Style for the Fullscreen button (REDUCED SIZE) */
+/* Style for the Fullscreen button (50% REDUCED SIZE) */
 #fullscreen-btn {
-    /* Reduced from 10px 20px to 6px 12px */
-    padding: 6px 12px;
-    /* Reduced from 1.5em to 1.1em */
-    font-size: 1.1em;
+    /* Reduced from 10px 20px to 5px 10px */
+    padding: 5px 10px;
+    /* Reduced from 1.5em to 0.9em */
+    font-size: 0.9em;
     font-weight: bold;
     color: var(--text-dark);
     background-color: #ccc;
     border: none;
-    border-radius: 5px; /* Slightly reduced border radius */
+    border-radius: 4px; 
     cursor: pointer;
 }
 #fullscreen-btn:active {
