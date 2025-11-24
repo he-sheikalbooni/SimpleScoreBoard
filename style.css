@@ -30,7 +30,6 @@ body {
 }
 
 .score-container {
-    /* Ensures score panels take up all vertical space */
     flex: 1; 
     display: flex;
     width: 100%;
@@ -41,7 +40,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* KEY CHANGE: Vertically center content perfectly in the panel */
     justify-content: center; 
     user-select: none; 
 }
@@ -57,22 +55,19 @@ body {
     color: var(--text-dark);
 }
 
-/* Title Styling (Removed/Hidden) */
+/* Title Styling (Hidden) */
 .team-title {
-    /* KEY CHANGE: Hide the titles completely */
     display: none;
 }
 
 /* Score Display and Adjustments */
 .score-control {
-    /* Center the score and buttons */
     display: flex;
     align-items: center;
     gap: 30px; 
 }
 
 .score {
-    /* KEY CHANGE: Increased from 10em to 15em */
     font-size: 15em; 
     font-weight: 900;
 }
@@ -93,15 +88,17 @@ body {
     background: rgba(255, 255, 255, 0.5); 
 }
 
-/* Reset Button Styling */
+/* Reset Button Styling (REDUCED SIZE) */
 .reset-btn {
-    padding: 10px 20px; 
-    font-size: 1.5em; 
+    /* Reduced from 10px 20px to 6px 12px */
+    padding: 6px 12px; 
+    /* Reduced from 1.5em to 1.1em */
+    font-size: 1.1em; 
     font-weight: bold;
     color: var(--text-light);
     background-color: var(--reset-color);
     border: none;
-    border-radius: 8px;
+    border-radius: 5px; /* Slightly reduced border radius */
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -109,15 +106,17 @@ body {
     background-color: #C62828;
 }
 
-/* Style for the Fullscreen button */
+/* Style for the Fullscreen button (REDUCED SIZE) */
 #fullscreen-btn {
-    padding: 10px 20px;
-    font-size: 1.5em;
+    /* Reduced from 10px 20px to 6px 12px */
+    padding: 6px 12px;
+    /* Reduced from 1.5em to 1.1em */
+    font-size: 1.1em;
     font-weight: bold;
     color: var(--text-dark);
     background-color: #ccc;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px; /* Slightly reduced border radius */
     cursor: pointer;
 }
 #fullscreen-btn:active {
