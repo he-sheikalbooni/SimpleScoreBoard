@@ -12,11 +12,21 @@
 body {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center; 
     margin: 0;
     font-family: Arial, sans-serif;
     overflow: hidden; 
+}
+
+/* Container for Top Buttons */
+.top-controls {
+    display: flex;
+    justify-content: space-between; /* Pushes buttons to opposite sides */
+    align-items: center;
+    width: 90%; 
+    max-width: 600px;
+    padding: 10px 0;
 }
 
 .score-container {
@@ -47,7 +57,7 @@ body {
 
 /* Title Styling (Small) */
 .team-title {
-    font-size: 2em; /* Kept small for less visual clutter */
+    font-size: 2em;
     margin-bottom: 2vh; 
     text-transform: uppercase;
     font-weight: 700;
@@ -61,7 +71,6 @@ body {
 }
 
 .score {
-    /* REVERTED: Back to the original large size */
     font-size: 10em; 
     font-weight: 900;
 }
@@ -82,22 +91,34 @@ body {
     background: rgba(255, 255, 255, 0.5); 
 }
 
-/* Reset Button Styling (Wider Look) */
+/* Reset Button Styling (Back to standard top positioning) */
 .reset-btn {
-    /* REVERTED: Back to wide look */
-    padding: 15px 40px; 
-    margin-bottom: 10px;
-    width: 90%; 
-    max-width: 600px;
-    font-size: 1.8em; 
+    /* STYLED FOR HEADER */
+    padding: 10px 20px; 
+    font-size: 1.5em; 
     font-weight: bold;
     color: var(--text-light);
     background-color: var(--reset-color);
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 .reset-btn:active {
     background-color: #C62828;
+}
+
+/* Style for the Fullscreen button */
+#fullscreen-btn {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-dark);
+    background-color: #ccc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#fullscreen-btn:active {
+    background-color: #aaa;
 }

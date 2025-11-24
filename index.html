@@ -8,7 +8,10 @@
 </head>
 <body>
 
-    <button class="reset-btn" onclick="resetGame()">RESET</button>
+    <header class="top-controls">
+        <button id="fullscreen-btn" onclick="toggleFullScreen()">Full</button>
+        <button class="reset-btn" onclick="resetGame()">RESET</button> 
+    </header>
 
     <main class="score-container">
 
@@ -31,6 +34,7 @@
         </div>
 
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
