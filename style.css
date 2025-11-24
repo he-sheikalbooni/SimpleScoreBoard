@@ -10,34 +10,28 @@
 
 /* Base Styling for Full-Screen Landscape View */
 body {
-    /* 1. KEY CHANGE: Sets the body to exactly the screen size */
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center; 
     margin: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Ensures no scrolling */
+    overflow: hidden; 
 }
 
 .score-container {
-    /* Takes up all available space between the top of the screen and the reset button */
-    flex-grow: 1; 
+    flex: 1; 
     display: flex;
     width: 100%;
 }
 
 .team-panel {
-    /* 50% width for each team */
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 2. KEY CHANGE: Distributes space inside the panel vertically */
-    justify-content: space-evenly; 
+    justify-content: center; 
     user-select: none; 
-    padding: 1vh 0; /* Use viewport units for padding */
 }
 
 /* Team Colors and Text Colors */
@@ -51,34 +45,32 @@ body {
     color: var(--text-dark);
 }
 
-/* Title Styling */
+/* Title Styling (Small) */
 .team-title {
-    /* 3. KEY CHANGE: Font size scales with screen height */
-    font-size: 5vh; 
+    font-size: 2em; /* Kept small for less visual clutter */
+    margin-bottom: 2vh; 
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0; /* Remove fixed margins */
 }
 
 /* Score Display and Adjustments */
 .score-control {
     display: flex;
     align-items: center;
-    gap: 2vw; /* Use viewport width for spacing */
+    gap: 30px; 
 }
 
 .score {
-    /* 4. KEY CHANGE: Score scales with screen height (or width, whichever is smaller) */
-    font-size: 15vh; 
+    /* REVERTED: Back to the original large size */
+    font-size: 10em; 
     font-weight: 900;
 }
 
 /* Plus/Minus Buttons */
 .adjust-btn {
-    /* 5. KEY CHANGE: Buttons scale with screen height */
-    width: 6vh;
-    height: 6vh;
-    font-size: 3vh;
+    width: var(--adjust-btn-size);
+    height: var(--adjust-btn-size);
+    font-size: 2em;
     border-radius: 50%;
     border: 3px solid currentColor;
     background: rgba(255, 255, 255, 0.2); 
@@ -90,12 +82,14 @@ body {
     background: rgba(255, 255, 255, 0.5); 
 }
 
-/* Reset Button Styling (Centered) */
+/* Reset Button Styling (Wider Look) */
 .reset-btn {
-    /* Fixed height area for the reset button */
-    padding: 1vh 2vw; 
-    /* Ensures button text scales appropriately */
-    font-size: 2.5vh; 
+    /* REVERTED: Back to wide look */
+    padding: 15px 40px; 
+    margin-bottom: 10px;
+    width: 90%; 
+    max-width: 600px;
+    font-size: 1.8em; 
     font-weight: bold;
     color: var(--text-light);
     background-color: var(--reset-color);
@@ -103,11 +97,6 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
-    
-    /* Centering and sizing adjustments */
-    width: 50%; 
-    max-width: 400px;
-    margin: 1vh 0; /* Small vertical margin to fit the screen */
 }
 .reset-btn:active {
     background-color: #C62828;
