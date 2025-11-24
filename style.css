@@ -1,0 +1,102 @@
+/* Color Variables */
+:root {
+    --green: #4CAF50;
+    --yellow: #FFC107;
+    --reset-color: #F44336;
+    --text-dark: #333;
+    --text-light: #FFFFFF;
+    --adjust-btn-size: 50px;
+}
+
+/* Base Styling for Full-Screen Landscape View */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+}
+
+.score-container {
+    flex: 1; 
+    display: flex;
+    width: 100%;
+}
+
+.team-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    user-select: none; 
+}
+
+/* Team Colors and Text Colors */
+.team-1 {
+    background-color: var(--green);
+    color: var(--text-light);
+}
+
+.team-2 {
+    background-color: var(--yellow);
+    color: var(--text-dark);
+}
+
+/* Title Styling (Decrease Size) */
+.team-title {
+    /* ADJUSTMENT HERE: Decreased from 3em to 2em */
+    font-size: 2em; 
+    margin-bottom: 2vh; 
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Score Display and Adjustments */
+.score-control {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.score {
+    font-size: 15em; 
+    font-weight: 900;
+}
+
+/* Plus/Minus Buttons */
+.adjust-btn {
+    width: var(--adjust-btn-size);
+    height: var(--adjust-btn-size);
+    font-size: 2em;
+    border-radius: 50%;
+    border: 3px solid currentColor;
+    background: rgba(255, 255, 255, 0.2); 
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.adjust-btn:active {
+    background: rgba(255, 255, 255, 0.5); 
+}
+
+/* Reset Button Styling (Centered) */
+.reset-btn {
+    padding: 15px 40px; 
+    margin-bottom: 10px;
+    width: 50%; 
+    max-width: 400px;
+    font-size: 1.8em; 
+    font-weight: bold;
+    color: var(--text-light);
+    background-color: var(--reset-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.reset-btn:active {
+    background-color: #C62828;
+}
